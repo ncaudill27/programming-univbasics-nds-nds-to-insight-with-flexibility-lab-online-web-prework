@@ -52,7 +52,7 @@ def gross_per_studio(collection)
     ww_gross = collection[i][:worldwide_gross]
     studio = collection[i][:studio]
     if !gps[studio]
-      gps[studio] = 0
+      gps[studio] =ww_gross
     else
       gps[studio] += ww_gross
     end
