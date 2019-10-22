@@ -72,6 +72,22 @@ def movies_with_directors_set(source)
   #
   # Array of Arrays containing all of a director's movies. Each movie will need
   # to have a :director_name key added to it.
+    movies_and_director = []
+  i = 0
+  while i < source.length do
+    director = source[i][:name]
+    inner_pairing = []
+    k = 0
+    while k < source[i][:movies].length do
+      movie = source[i][:movies][k]
+      film = movie_with_director_name(director, movie)
+      inner_pairing << film
+      k += 1
+    end
+    movies_and_director << inner_pairing
+    i += 1
+  end
+  movies_and_director
 end
 
 # ----------------    End of Your Code Region --------------------
